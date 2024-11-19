@@ -1,16 +1,12 @@
 from django.db import models
 
-
 class Contact(models.Model):
-    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    phone1 = models.CharField(max_length=20)
+    phone2 = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField()
-    subject = models.CharField(max_length=255)
-    message = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        verbose_name = "Contact"
-        verbose_name_plural = "Contacts"
+    facebook = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
 
     def __str__(self):
-        return f"Message from {self.name}"
+        return self.address

@@ -4,4 +4,4 @@ from ..models import About
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
         model = About
-        fields = ['id', 'history', 'mission', 'vision']  # Исправлено
+        fields = ['id', 'history', 'mission', 'vision']
